@@ -26,14 +26,15 @@ function ChatInput() {
 			message: messageToSend,
 			created_at: Date.now(),
 			username: "An Onumos",
-			profilePic: "../assets/pfp.jpg",
+			profilePic:
+				"https://img.over-blog-kiwi.com/0/85/88/28/20170830/ob_8f4c9f_204-36-tete-barbier-muller-biennale-an.jpg",
 			email: "",
 		};
 
 		const uploadMessageToUpstash = async () => {
 			const data = await fetch("/api/addMessage", {
 				method: "POST",
-				headers: {"Content-Type": "aplication/json"},
+				headers: {"Content-Type": "application/json"},
 				body: JSON.stringify({message}),
 			}).then((res) => res.json());
 
@@ -49,7 +50,7 @@ function ChatInput() {
 	return (
 		<form
 			onSubmit={addMessage}
-			className="fixed bottom-0 z-50 w-full flex px-10 py-5 space-x-2 border-t border-gray-100">
+			className="fixed bottom-0 z-50 w-full flex px-10 py-5 space-x-2 bg-white border-t border-gray-100">
 			<input
 				type="text"
 				value={input}

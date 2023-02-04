@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SignOutButton from "./SignOutButton";
+import pfp from "../assets/pfp.jpg";
 
 function Header() {
 	const session = true;
@@ -10,11 +11,11 @@ function Header() {
 			<header className="sticky top-0 z-50 bg-white flex justify-between items-center p-10 shadow-sm">
 				<div className="flex space-x-2">
 					<Image
-						src="https://links.papareact.com/jne"
-						alt="pfp"
+						src={pfp}
+						alt="profile picture"
 						height={10}
 						width={50}
-						className="rounded-full mx-2 object-contain"
+						className="rounded-full mx-2 my-1 object-contain"
 					/>
 					<div>
 						<p className="text-blue-400">Logged in as:</p>
